@@ -8,7 +8,6 @@ export function DashboardNav({ userEmail }: { userEmail: string }) {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-200/50 bg-white/80 backdrop-blur-md">
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* ロゴ：少し太めのトラッキングで高級感を */}
         <Link href="/dashboard" className="group flex items-center gap-2">
           <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center group-hover:rotate-3 transition-transform">
             <span className="text-white font-black text-xl">t</span>
@@ -19,7 +18,6 @@ export function DashboardNav({ userEmail }: { userEmail: string }) {
         </Link>
         
         <div className="flex items-center gap-3">
-          {/* デスクトップ用：ユーザー情報をさりげなく表示 */}
           <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-gray-50 rounded-full border border-gray-100">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span className="text-xs font-medium text-gray-600">{userEmail}</span>

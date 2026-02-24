@@ -1,4 +1,4 @@
-'use client' // クライアント側で実行するためのマーク
+'use client'
 
 import { createBrowserClient } from '@supabase/ssr'
 
@@ -12,7 +12,6 @@ export async function createProject(formData: FormData) {
   const client_name = formData.get('client_name') as string
   const github_repo = formData.get('github_repo') as string
 
-  // 現在のユーザーIDを取得
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) throw new Error('Unauthorized')
 
@@ -30,6 +29,6 @@ export async function createProject(formData: FormData) {
     alert('保存に失敗しました')
   } else {
     alert('案件を登録しました！')
-    window.location.reload() // 簡易的にリロードで更新
+    window.location.reload()
   }
 }

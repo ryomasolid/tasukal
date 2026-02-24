@@ -1,6 +1,5 @@
 'use client'
 import { ProfileForm } from "../profile-form"
-import { Button } from "@/components/ui/button"
 import { ChevronLeft, ShieldCheck } from "lucide-react"
 import Link from "next/link"
 import { DashboardNav } from "../nav"
@@ -8,7 +7,7 @@ import { DashboardNav } from "../nav"
 export default function SettingsPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFC]">
-      <DashboardNav userEmail="" /> {/* Navは共通化 */}
+      <DashboardNav userEmail="" />
       
       <main className="p-6 md:p-10 max-w-2xl mx-auto">
         <Link href="/dashboard" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors mb-8 group">

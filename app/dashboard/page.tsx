@@ -3,15 +3,16 @@
 import { createBrowserClient } from '@supabase/ssr'
 import { useEffect, useState } from 'react'
 import { createProject } from './actions'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { InvoiceModal } from './invoice-modal'
 import { DashboardNav } from './nav'
 import { Plus, Briefcase, ChevronRight, FileText } from 'lucide-react'
+import { User } from '@supabase/supabase-js'
 
 export default function DashboardPage() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<User | null>()
   const [projects, setProjects] = useState<any[]>([])
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null)
   
@@ -40,7 +41,6 @@ export default function DashboardPage() {
       <DashboardNav userEmail={user?.email || ''} />
       
       <main className="p-6 md:p-10 max-w-5xl mx-auto space-y-12">
-        {/* セクション1: 新規登録 */}
         <section>
           <div className="flex items-center gap-2 mb-6">
             <div className="w-1 h-6 bg-blue-600 rounded-full" />
@@ -72,7 +72,6 @@ export default function DashboardPage() {
           </Card>
         </section>
 
-        {/* セクション2: 案件一覧 */}
         <section>
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">

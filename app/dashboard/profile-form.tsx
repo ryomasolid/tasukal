@@ -34,6 +34,7 @@ export function ProfileForm() {
       setLoading(false)
     }
     loadProfile()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function handleSubmit(e: React.FormEvent) {
